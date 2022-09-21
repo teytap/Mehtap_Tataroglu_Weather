@@ -1,0 +1,83 @@
+h1 {
+  padding-top: 20px;
+  text-align: left;
+  margin-left: 30px;
+}
+
+h5 {
+  text-align: left;
+  font-size: 18px;
+}
+ul {
+  text-align: left;
+  list-style: none;
+}
+form {
+  text-align: center;
+}
+button {
+  background-color: rgb(252, 252, 161);
+  border-radius: 3px;
+
+  border: 1px solid grey;
+  box-shadow: 5px darkslategray;
+}
+button:hover {
+  transition: all 200ms ease-in-out;
+  background-color: rgb(236, 236, 76);
+  opacity: 0, 7;
+}
+.container {
+  text-align: left;
+  border: 2px solid none;
+  border-radius: 10px;
+  max-width: 600px;
+  padding: 10px;
+  margin-top: 20px;
+  background: linear-gradient(
+    89.2deg,
+    rgb(191, 241, 236) 22.3%,
+    rgb(109, 192, 236) 84.1%
+  );
+  font-family: "Poppins", sans-serif;
+}
+.btn.btn-primary {
+}
+.emoji {
+  font-size: 36px;
+}
+.changeDegree {
+  padding-top: 0;
+  margin-top: 0;
+  font-size: 72px;
+}
+.degreeToday {
+  font-weight: bold;
+}
+.searching {
+  display: block;
+  margin: 0 auto;
+}
+.slash {
+  font-size: 24px;
+  color: grey;
+}
+#celcius {
+  text-decoration: none;
+  font-size: 24px;
+  color: grey;
+}
+#celcius:hover {
+  transition: all 200ms ease-in-out;
+  color: rgb(109, 108, 108);
+}
+#fahrenheit {
+  text-decoration: none;
+  font-size: 24px;
+  color: grey;
+}
+
+#fahrenheit:hover {
+  transition: all 200ms ease-in-out;
+  color: rgb(109, 108, 108);
+}

@@ -17,7 +17,7 @@ let minute = now.getMinutes();
 if (minute < 10) {
   minute = `0${minute}`;
 }
-let currentDate = document.querySelector("h6");
+let currentDate = document.querySelector(".dayHour");
 currentDate.innerHTML = `${days[now.getDay()]}  ${hour}:${minute}`;
 
 let celcius = document.querySelector("#celcius");
@@ -43,13 +43,13 @@ function newCityTemp(response) {
   changeDegree.innerHTML = `${temperature}`;
   let min = document.querySelector(".min");
   let max = document.querySelector(".max");
-  let h5 = document.querySelector("h5");
+  let weatherDescription = document.querySelector(".weatherDescription");
   let minTemp = Math.round(response.data.main.temp_min);
   let maxTemp = Math.round(response.data.main.temp_max);
   let description = response.data.weather[0].description;
   min.innerHTML = `${minTemp}`;
   max.innerHTML = `${maxTemp}`;
-  h5.innerHTML = `${description}`;
+  weatherDescription.innerHTML = `${description}`;
 }
 function searchCity(newCityInput) {
   let apiKey = "1223d92fc1f5a88dccf0859beb3b3425";
