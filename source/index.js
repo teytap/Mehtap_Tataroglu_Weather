@@ -37,19 +37,15 @@ fahrenheit.addEventListener("click", fah);
 
 function newCityTemp(response) {
   let h1 = document.querySelector("h1");
-  h1.innerHTML = `${response.data.name}`;
+  h1.innerHTML = response.data.name;
   let changeDegree = document.querySelector(".changeDegree");
-  let temperature = Math.round(response.data.main.temp);
-  changeDegree.innerHTML = `${temperature}`;
+  changeDegree.innerHTML = Math.round(response.data.main.temp);
   let min = document.querySelector(".min");
   let max = document.querySelector(".max");
-  let minTemp = Math.round(response.data.main.temp_min);
-  let maxTemp = Math.round(response.data.main.temp_max);
-  min.innerHTML = `${minTemp}`;
-  max.innerHTML = `${maxTemp}`;
+  min.innerHTML = Math.round(response.data.main.temp_min);
+  max.innerHTML = Math.round(response.data.main.temp_max);
   let weatherDescription = document.querySelector(".weatherDescription");
-  let description = response.data.weather[0].description;
-  weatherDescription.innerHTML = `${description}`;
+  weatherDescription.innerHTML = response.data.weather[0].description;
   let weatherHumidity = document.querySelector("#humidity");
   weatherHumidity.innerHTML = response.data.main.humidity;
   let weatherWind = document.querySelector("#wind");
