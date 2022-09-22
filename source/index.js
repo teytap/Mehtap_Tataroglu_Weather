@@ -43,13 +43,18 @@ function newCityTemp(response) {
   changeDegree.innerHTML = `${temperature}`;
   let min = document.querySelector(".min");
   let max = document.querySelector(".max");
-  let weatherDescription = document.querySelector(".weatherDescription");
   let minTemp = Math.round(response.data.main.temp_min);
   let maxTemp = Math.round(response.data.main.temp_max);
-  let description = response.data.weather[0].description;
   min.innerHTML = `${minTemp}`;
   max.innerHTML = `${maxTemp}`;
+  let weatherDescription = document.querySelector(".weatherDescription");
+  let description = response.data.weather[0].description;
   weatherDescription.innerHTML = `${description}`;
+  let weatherHumidity = document.querySelector("#humidity");
+  weatherHumidity.innerHTML = response.data.main.humidity;
+  let weatherWind = document.querySelector("#wind");
+  weatherWind.innerHTML = Math.round(response.data.wind.speed);
+  console.log(response.data);
 }
 function searchCity(newCityInput) {
   let apiKey = "1223d92fc1f5a88dccf0859beb3b3425";
@@ -81,4 +86,3 @@ function getLocation(position) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(newCityTemp);
 }
-console.log(response.data.weather);
