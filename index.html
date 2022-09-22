@@ -22,10 +22,11 @@
     />
     <link rel="stylesheet" href="source/style.css" />
   </head>
+
   <body>
     <div class="container">
-      <div class="row">
-        <div class="col-8">
+      <div class="row justify-content-between">
+        <div class="col-6">
           <form action="">
             <input
               type="text"
@@ -36,7 +37,7 @@
             <input type="submit" id="citySearch" value="Search" />
           </form>
         </div>
-        <div class="col-4">
+        <div class="col-6">
           <button>Current</button>
         </div>
       </div>
@@ -58,12 +59,14 @@
           </ul>
         </div>
         <div class="col-6">
-          <span class="emoji">🌥 </span><span class="changeDegree">24</span
-          ><a href="#" id="celcius"> °C </a><span class="slash"> |</span>
-          <a href="#" id="fahrenheit">°F</a>
-          <ul>
-            <li></li>
-          </ul>
+          <div class="d-flex flex-row">
+            <div class="p-2"><span class="emoji">🌥</span></div>
+            <div class="p-2"><span class="changeDegree">24</span></div>
+            <div class="p-2">
+              <a href="#" id="celcius">°C </a><span class="slash">| </span
+              ><a href="#" id="fahrenheit">°F</a>
+            </div>
+          </div>
         </div>
       </div>
 

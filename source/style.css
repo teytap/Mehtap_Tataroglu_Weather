@@ -1,7 +1,6 @@
 h1 {
   padding-top: 20px;
   text-align: left;
-  margin-left: 30px;
 }
 
 h5 {
@@ -11,6 +10,12 @@ h5 {
 ul {
   text-align: left;
   list-style: none;
+  margin: 0;
+  padding: 0;
+}
+li {
+  margin: 0;
+  padding: 0;
 }
 form {
   text-align: center;
@@ -18,9 +23,9 @@ form {
 button {
   background-color: rgb(252, 252, 161);
   border-radius: 3px;
-
-  border: 1px solid grey;
-  box-shadow: 5px darkslategray;
+  border: 1px solid rgb(252, 252, 161);
+  box-shadow: 3px 3px 3px grey;
+  padding: 4px 10px;
 }
 button:hover {
   transition: all 200ms ease-in-out;
@@ -32,7 +37,7 @@ button:hover {
   border: 2px solid none;
   border-radius: 10px;
   max-width: 600px;
-  padding: 10px;
+  padding: 20px;
   margin-top: 20px;
   background: linear-gradient(
     89.2deg,
@@ -40,16 +45,18 @@ button:hover {
     rgb(109, 192, 236) 84.1%
   );
   font-family: "Poppins", sans-serif;
+  box-shadow: 5px 5px 5px grey;
 }
-.btn.btn-primary {
-}
+
 .emoji {
   font-size: 36px;
+  line-height: 1;
 }
 .changeDegree {
   padding-top: 0;
   margin-top: 0;
   font-size: 72px;
+  line-height: 1;
 }
 .degreeToday {
   font-weight: bold;
@@ -80,4 +87,16 @@ button:hover {
 #fahrenheit:hover {
   transition: all 200ms ease-in-out;
   color: rgb(109, 108, 108);
+}
+#newCity {
+  padding: 4px 10px;
+  box-shadow: 3px 3px 3px grey;
+  border: none;
+  border-radius: 3px;
+}
+#citySearch {
+  padding: 4px 10px;
+  box-shadow: 3px 3px 3px grey;
+  border: none;
+  border-radius: 3px;
 }
