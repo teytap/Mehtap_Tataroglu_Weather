@@ -51,14 +51,10 @@ button:hover {
   box-shadow: 5px 5px 5px grey;
 }
 
-.emoji {
-  font-size: 36px;
-  line-height: 1;
-}
 .changeDegree {
   padding-top: 0;
   margin-top: 0;
-  font-size: 72px;
+  font-size: 80px;
   line-height: 1;
 }
 .degreeToday {
@@ -69,12 +65,12 @@ button:hover {
   margin: 0 auto;
 }
 .slash {
-  font-size: 24px;
+  font-size: 20px;
   color: grey;
 }
 #celcius {
   text-decoration: none;
-  font-size: 24px;
+  font-size: 20px;
   color: grey;
 }
 #celcius:hover {
@@ -83,7 +79,7 @@ button:hover {
 }
 #fahrenheit {
   text-decoration: none;
-  font-size: 24px;
+  font-size: 20px;
   color: grey;
 }
 
