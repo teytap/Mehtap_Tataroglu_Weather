@@ -36,30 +36,54 @@ function fah(event) {
 celcius.addEventListener("click", cel);
 fahrenheit.addEventListener("click", fah);
 
-function newCityForecast() {
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+function newCityForecast(response) {
+  let forecastDaily = response.data.daily;
   let forecast = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
-  let days = ["Thu", "Fri", "Sat"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+  forecastDaily.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
             <div class="col-2">
-              <div class="weather-forecast-date">${day}</div>
+              <div class="weather-forecast-date">${formatDay(
+                forecastDay.dt
+              )}</div>
               <img
-                src="http://openweathermap.org/img/wn/04d@2x.png"
+                src="http://openweathermap.org/img/wn/${
+                  forecastDay.weather[0].icon
+                }@2x.png"
                 alt="Cloudy"
-                width="42px"
+                width="42"
               />
               <br />
-              <span class="forecast-max">18°</span>
-              <span class="forecast-min">10°</span>
+              <span class="forecast-max">${Math.round(
+                forecastDay.temp.max
+              )}°</span>
+              <span class="forecast-min">${Math.round(
+                forecastDay.temp.min
+              )}°</span>
             </div>
           `;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
   forecast.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(newCityForecast);
 }
 
 function newCityTemp(response) {
@@ -81,7 +105,8 @@ function newCityTemp(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   weatherIcon.setAttribute("alt", response.data.weather[0].description);
-  console.log(response.data.weather[0].icon);
+
+  getForecast(response.data.coord);
 }
 
 function searchCity(newCityInput) {
@@ -118,4 +143,3 @@ let button = document.querySelector("button");
 button.addEventListener("click", buttonEvent);
 
 searchCity("Ankara");
-newCityForecast();
