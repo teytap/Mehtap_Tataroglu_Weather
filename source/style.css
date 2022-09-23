@@ -24,16 +24,17 @@ form {
   text-align: center;
 }
 button {
-  background-color: rgb(252, 252, 161);
+  background-color: #ec6e4c;
+  color: white;
   border-radius: 3px;
-  border: 1px solid rgb(252, 252, 161);
+  border: 1px solid #ec6e4c;
   box-shadow: 3px 3px 3px grey;
   padding: 4px 10px;
   margin-left: -10px;
 }
 button:hover {
   transition: all 200ms ease-in-out;
-  background-color: rgb(236, 236, 119);
+  background-color: #dc6241;
   opacity: 0, 7;
 }
 .container {
@@ -67,26 +68,40 @@ button:hover {
 }
 .slash {
   font-size: 20px;
-  color: yellow;
+  color: #ec6e4c;
+}
+.weather-forecast {
+  text-align: center;
+  margin-top: 24px;
+}
+.weather-forecast-date {
+  font-size: 16px;
+}
+
+.forecast-max {
+  color: #ec6e4c;
+}
+.forecast-min {
+  opacity: 0.6;
 }
 #celcius {
   text-decoration: none;
   font-size: 20px;
-  color: yellow;
+  color: #ec6e4c;
 }
 #celcius:hover {
   transition: all 200ms ease-in-out;
-  color: rgb(221, 221, 69);
+  color: #dc6241;
 }
 #fahrenheit {
   text-decoration: none;
   font-size: 20px;
-  color: yellow;
+  color: #ec6e4c;
 }
 
 #fahrenheit:hover {
   transition: all 200ms ease-in-out;
-  color: rgb(221, 221, 69);
+  color: #dc6241;
 }
 #newCity {
   padding: 4px 10px;
