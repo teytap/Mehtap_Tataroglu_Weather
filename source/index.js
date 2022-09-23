@@ -46,8 +46,8 @@ function newCityForecast(response) {
   let forecastDaily = response.data.daily;
   let forecast = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
-  forecastDaily.forEach(function (forecastDay, index) {
-    if (index < 6) {
+  forecastDaily.forEach(function (forecastDay, i) {
+    if (i < 6) {
       forecastHTML =
         forecastHTML +
         `
