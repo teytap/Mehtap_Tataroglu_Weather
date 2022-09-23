@@ -36,6 +36,32 @@ function fah(event) {
 celcius.addEventListener("click", cel);
 fahrenheit.addEventListener("click", fah);
 
+function newCityForecast() {
+  let forecast = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thu", "Fri", "Sat"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+            <div class="col-2">
+              <div class="weather-forecast-date">${day}</div>
+              <img
+                src="http://openweathermap.org/img/wn/04d@2x.png"
+                alt="Cloudy"
+                width="42px"
+              />
+              <br />
+              <span class="forecast-max">18°</span>
+              <span class="forecast-min">10°</span>
+            </div>
+          `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecast.innerHTML = forecastHTML;
+}
+
 function newCityTemp(response) {
   let h1 = document.querySelector("h1");
   let changeDegree = document.querySelector(".changeDegree");
@@ -92,3 +118,4 @@ let button = document.querySelector("button");
 button.addEventListener("click", buttonEvent);
 
 searchCity("Ankara");
+newCityForecast();
