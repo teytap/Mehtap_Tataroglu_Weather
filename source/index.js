@@ -26,11 +26,12 @@ let changeDegree = document.querySelector(".changeDegree");
 
 function cel(event) {
   event.preventDefault();
-  changeDegree.innerHTML = "24";
+  changeDegree.innerHTML = Math.round(celciusTemp);
 }
 function fah(event) {
   event.preventDefault();
-  changeDegree.innerHTML = "75";
+  let fahrenheitTemp = (celciusTemp * 9) / 5 + 32;
+  changeDegree.innerHTML = Math.round(fahrenheitTemp);
 }
 celcius.addEventListener("click", cel);
 fahrenheit.addEventListener("click", fah);
@@ -40,6 +41,7 @@ function newCityTemp(response) {
   h1.innerHTML = response.data.name;
   let changeDegree = document.querySelector(".changeDegree");
   changeDegree.innerHTML = Math.round(response.data.main.temp);
+  celciusTemp = response.data.main.temp;
   let min = document.querySelector(".min");
   let max = document.querySelector(".max");
   min.innerHTML = Math.round(response.data.main.temp_min);
@@ -56,7 +58,7 @@ function newCityTemp(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   weatherIcon.setAttribute("alt", response.data.weather[0].description);
-  console.log(response.data);
+  console.log(response.data.weather[0].icon);
 }
 function searchCity(newCityInput) {
   let apiKey = "1223d92fc1f5a88dccf0859beb3b3425";
@@ -69,6 +71,8 @@ function searchButtonCity(event) {
   let newCityInput = document.querySelector("#newCity").value;
   searchCity(newCityInput);
 }
+
+let celciusTemp = null;
 
 let form = document.querySelector("form");
 form.addEventListener("submit", searchButtonCity);
@@ -88,3 +92,5 @@ function getLocation(position) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(newCityTemp);
 }
+
+searchCity("Ankara");

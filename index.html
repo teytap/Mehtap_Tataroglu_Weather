@@ -25,19 +25,26 @@
 
   <body>
     <div class="container">
-      <div class="row justify-content-between">
-        <div class="col-6">
+      <div class="row">
+        <div class="col-9">
           <form action="">
-            <input
-              type="text"
-              id="newCity"
-              placeholder="Type a city.."
-              autofocus="on"
-            />
-            <input type="submit" id="citySearch" value="Search" />
+            <div class="row">
+              <div class="col-6">
+                <input
+                  type="text"
+                  id="newCity"
+                  placeholder="Type a city.."
+                  autofocus="on"
+                  class="form-control"
+                />
+              </div>
+              <div class="col-3">
+                <input type="submit" id="citySearch" value="Search" />
+              </div>
+            </div>
           </form>
         </div>
-        <div class="col-6">
+        <div class="col-3">
           <button>Current</button>
         </div>
       </div>
@@ -63,8 +70,8 @@
             <div class="p-2">
               <span class="emoji"
                 ><img
-                  src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
-                  alt="Clear"
+                  src="http://openweathermap.org/img/wn/04d@2x.png"
+                  alt="Cloudy"
                   id="icon"
               /></span>
             </div>
