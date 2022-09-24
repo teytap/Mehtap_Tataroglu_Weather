@@ -44,11 +44,7 @@ button:hover {
   max-width: 600px;
   padding: 20px;
   margin-top: 20px;
-  background: linear-gradient(
-    89.2deg,
-    rgb(191, 241, 236) 22.3%,
-    rgb(109, 192, 236) 84.1%
-  );
+  background: linear-gradient(to top, #c4c5c7 0%, #dcdddf 52%, #ebebeb 100%);
   font-family: "Poppins", sans-serif;
   box-shadow: 5px 5px 5px grey;
 }
@@ -84,6 +80,7 @@ button:hover {
 .forecast-min {
   opacity: 0.6;
 }
+
 #celcius {
   text-decoration: none;
   font-size: 20px;
