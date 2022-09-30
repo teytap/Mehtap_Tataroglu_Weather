@@ -60,7 +60,7 @@ function newCityForecast(response) {
                   forecastDay.weather[0].icon
                 }@2x.png"
                 alt="Cloudy"
-                width="42"
+                width="50"
               />
               <br />
               <span class="forecast-max">${Math.round(

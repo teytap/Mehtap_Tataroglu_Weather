@@ -66,6 +66,10 @@ button:hover {
   font-size: 20px;
   color: #ec6e4c;
 }
+.dayHour {
+  font-size: 20px;
+  color: #ec6e4c;
+}
 .weather-forecast {
   text-align: center;
   margin-top: 24px;
