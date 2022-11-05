@@ -18,7 +18,9 @@ if (minute < 10) {
   minute = `0${minute}`;
 }
 let currentDate = document.querySelector(".dayHour");
-currentDate.innerHTML = `${days[now.getDay()]}  ${hour}:${minute}`;
+currentDate.innerHTML = `<i class="fa-solid fa-calendar-days"></i> ${
+  days[now.getDay()]
+}  <i class="fa-solid fa-clock"></i> ${hour}:${minute}`;
 
 let celcius = document.querySelector("#celcius");
 let fahrenheit = document.querySelector("#fahrenheit");
