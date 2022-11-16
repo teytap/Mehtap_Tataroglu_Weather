@@ -1,11 +1,11 @@
 let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
+  "Pazar",
+  "Pazartesi",
+  "Salı",
+  "Çarşamba",
+  "Perşembe",
+  "Cuma",
+  "Cumartesi",
 ];
 
 let now = new Date();
@@ -18,9 +18,9 @@ if (minute < 10) {
   minute = `0${minute}`;
 }
 let currentDate = document.querySelector(".dayHour");
-currentDate.innerHTML = `<i class="fa-solid fa-calendar-days"></i> ${
+currentDate.innerHTML = ` ${
   days[now.getDay()]
-}  <i class="fa-solid fa-clock"></i> ${hour}:${minute}`;
+}   ${hour}:${minute} <i class="fa-solid fa-clock"></i>`;
 
 let celcius = document.querySelector("#celcius");
 let fahrenheit = document.querySelector("#fahrenheit");
@@ -41,7 +41,7 @@ fahrenheit.addEventListener("click", fah);
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
-  days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  days = ["Pzr", "Pzt", "Sal", "Çar", "Per", "Cum", "Cts"];
   return days[day];
 }
 function newCityForecast(response) {
@@ -113,7 +113,7 @@ function newCityTemp(response) {
 
 function searchCity(newCityInput) {
   let apiKey = "1223d92fc1f5a88dccf0859beb3b3425";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${newCityInput}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${newCityInput}&appid=${apiKey}&lang=tr&units=metric`;
   axios.get(apiUrl).then(newCityTemp);
 }
 
