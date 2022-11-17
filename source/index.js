@@ -25,6 +25,17 @@ currentDate.innerHTML = ` ${
 let celcius = document.querySelector("#celcius");
 let fahrenheit = document.querySelector("#fahrenheit");
 let changeDegree = document.querySelector(".changeDegree");
+let descriptionMapping = {
+  "clear sky": "Açık",
+  "few clouds": "Az Bulutlu",
+  "scattered clouds": "Kapalı",
+  "broken clouds": "Parçalı Bulutlu",
+  "shower rain": "Sağanak Yağış",
+  "rain ": "Yağmurlu",
+  "thunderstorm ": "Fırtına",
+  "snow ": "Kar",
+  "mist ": "Sisli",
+};
 
 function cel(event) {
   event.preventDefault();
@@ -99,7 +110,8 @@ function newCityTemp(response) {
   h1.innerHTML = response.data.name;
   changeDegree.innerHTML = Math.round(response.data.main.temp);
   celciusTemp = response.data.main.temp;
-  weatherDescription.innerHTML = response.data.weather[0].description;
+  weatherDescription.innerHTML =
+    descriptionMapping[response.data.weather[0].description];
   weatherHumidity.innerHTML = response.data.main.humidity;
   weatherWind.innerHTML = Math.round(response.data.wind.speed);
   weatherIcon.setAttribute(
@@ -113,7 +125,7 @@ function newCityTemp(response) {
 
 function searchCity(newCityInput) {
   let apiKey = "1223d92fc1f5a88dccf0859beb3b3425";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${newCityInput}&appid=${apiKey}&lang=tr&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${newCityInput}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(newCityTemp);
 }
 

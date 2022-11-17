@@ -1,5 +1,5 @@
 body {
-  color: rgb(61, 59, 59);
+  color: rgb(47, 45, 45);
   background-image: url("https://rare-gallery.com/uploads/posts/5306315-mountain-blue-teal-range-mountain-range-layers-amazing-wallpaper-desktop-wallpaper-desktop-background-monochrome-layer-shape-minimalist-minimal-wallpaper-silhouette-light-shadow-landscape-natu.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -8,6 +8,8 @@ body {
 h1 {
   padding-top: 20px;
   text-align: left;
+  font-size: 68px;
+  font-weight: bold;
 }
 
 h5 {
@@ -70,9 +72,14 @@ button:hover {
   margin-top: 0;
   font-size: 80px;
   line-height: 1;
+  font-weight: bold;
 }
 .degreeToday {
   font-weight: bold;
+}
+.emoji {
+  position: relative;
+  top: -10px;
 }
 .searching {
   display: block;
@@ -83,8 +90,7 @@ button:hover {
   color: #ec6e4c;
 }
 .dayHour {
-  font-size: 20px;
-  /*color: #ec6e4c;*/
+  font-weight: bolder;
 }
 .weather-forecast {
   text-align: center;
@@ -94,8 +100,7 @@ button:hover {
   font-size: 16px;
   padding-bottom: 10px;
 }
-.weatherDescription {
-}
+
 .forecast-max {
   color: #ec6e4c;
 }
@@ -107,7 +112,8 @@ button:hover {
 }
 #celcius {
   text-decoration: none;
-  font-size: 20px;
+  font-size: 24px;
+  font-weight: bolder;
   color: #ec6e4c;
 }
 #celcius:hover {
@@ -116,7 +122,8 @@ button:hover {
 }
 #fahrenheit {
   text-decoration: none;
-  font-size: 20px;
+  font-size: 24px;
+  font-weight: bolder;
   color: #ec6e4c;
 }
 
