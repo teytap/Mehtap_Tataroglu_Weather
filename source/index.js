@@ -28,7 +28,8 @@ let changeDegree = document.querySelector(".changeDegree");
 let descriptionMapping = {
   "clear sky": "Açık",
   "few clouds": "Az Bulutlu",
-  "scattered clouds": "Kapalı",
+  "scattered clouds": "Parçalı Bulutlu",
+  "overcast clouds": "Kapalı",
   "broken clouds": "Parçalı Bulutlu",
   "shower rain": "Sağanak Yağış",
   "rain ": "Yağmurlu",
@@ -95,7 +96,6 @@ function getForecast(coordinates) {
   console.log(coordinates);
   let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-  console.log(apiUrl);
   axios.get(apiUrl).then(newCityForecast);
 }
 
@@ -112,6 +112,7 @@ function newCityTemp(response) {
   celciusTemp = response.data.main.temp;
   weatherDescription.innerHTML =
     descriptionMapping[response.data.weather[0].description];
+  console.log(response.data.weather[0].description);
   weatherHumidity.innerHTML = response.data.main.humidity;
   weatherWind.innerHTML = Math.round(response.data.wind.speed);
   weatherIcon.setAttribute(
